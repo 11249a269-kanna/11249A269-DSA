@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-// Function to display array elements
 void show(int arr[], int n) {
     for (int i = 0; i < n; i++)
         printf("%d ", arr[i]);
@@ -14,7 +13,7 @@ int main() {
     printf("Array: ");
     show(arr, n);
 
-    // Searching for an element (key)
+
     key = 30;
     for (i = 0; i < n && arr[i] != key; i++);
     if (i < n)
@@ -22,7 +21,6 @@ int main() {
     else
         printf("%d Not found\n", key);
 
-    // Inserting an element at a position
     pos = 2;
     if (n < cap) {
         for (i = n; i > pos; i--)
@@ -33,7 +31,6 @@ int main() {
     printf("After insertion: ");
     show(arr, n);
 
-    // Deleting an element at a position
     pos = 3;
     if (pos >= 0 && pos < n) {
         for (i = pos; i < n - 1; i++)
