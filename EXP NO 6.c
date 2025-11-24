@@ -6,7 +6,6 @@ struct Node {
     struct Node* next;
 };
 
-// Insert at the beginning
 void insertAtBeginning(struct Node** head, int newData) {
     struct Node* newNode = malloc(sizeof(struct Node));
     newNode->data = newData;
@@ -14,7 +13,6 @@ void insertAtBeginning(struct Node** head, int newData) {
     *head = newNode;
 }
 
-// Insert at the end
 void insertAtEnd(struct Node** head, int newData) {
     struct Node* newNode = malloc(sizeof(struct Node)), *last = *head;
     newNode->data = newData;
@@ -27,7 +25,6 @@ void insertAtEnd(struct Node** head, int newData) {
     last->next = newNode;
 }
 
-// Insert at a specific position
 void insertAtMiddle(struct Node** head, int newData, int pos) {
     if (pos < 0) return;
     struct Node* newNode = malloc(sizeof(struct Node)), *temp = *head;
@@ -39,7 +36,6 @@ void insertAtMiddle(struct Node** head, int newData, int pos) {
     temp->next = newNode;
 }
 
-// Delete a node by value
 void deleteNode(struct Node** head, int key) {
     struct Node *temp = *head, *prev = NULL;
     if (temp && temp->data == key) { *head = temp->next; free(temp); return; }
@@ -49,7 +45,6 @@ void deleteNode(struct Node** head, int key) {
     free(temp);
 }
 
-// Print the list
 void printList(struct Node* head) {
     while (head) { printf("%d -> ", head->data); head = head->next; }
     printf("NULL\n");
@@ -61,13 +56,13 @@ int main() {
     insertAtBeginning(&head, 20);
     insertAtEnd(&head, 5);
     insertAtMiddle(&head, 15, 1);
-    printList(head); // Output: 20 -> 15 -> 10 -> 5 -> NULL
+    printList(head); 
 
     deleteNode(&head, 10);
-    printList(head); // Output: 20 -> 15 -> 5 -> NULL
+    printList(head); 
 
-    deleteNode(&head, 100); // Node not found
-    printList(head); // Output: 20 -> 15 -> 5 -> NULL
+    deleteNode(&head, 100);
+    printList(head); 
 
     return 0;
 }
