@@ -4,20 +4,17 @@
 
 int hash_table[SIZE];
 
-/* Initialize hash table */
 void init()
 {
     for (int i = 0; i < SIZE; i++)
         hash_table[i] = -1;
 }
 
-/* Hash function */
 int hash(int key)
 {
     return key % SIZE;
 }
 
-/* Insert using Linear Probing */
 void insert(int key)
 {
     int index = hash(key);
@@ -42,7 +39,6 @@ void insert(int key)
     }
 }
 
-/* Search using Linear Probing */
 int search(int key)
 {
     int index = hash(key);
@@ -63,7 +59,6 @@ int search(int key)
     return -1;
 }
 
-/* Display Hash Table */
 void display()
 {
     printf("\nHash Table:\n");
@@ -73,7 +68,6 @@ void display()
     }
 }
 
-/* Main Function */
 int main()
 {
     init();
